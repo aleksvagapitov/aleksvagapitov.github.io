@@ -45,21 +45,13 @@ theme = "LoveIt"
     title = ""
     weight = 4
   [[menu.main]]
-    identifier = "portfolio"
-    pre = ""
-    post = ""
-    name = "Portfolio"
-    url = "/portfolio/"
-    title = ""
-    weight = 5
-  [[menu.main]]
     identifier = "github"
     pre = "<i class='fab fa-github fa-fw'></i>"
     post = ""
     name = ""
     url = "https://github.com/aleksvagapitov"
     title = "GitHub"
-    weight = 6
+    weight = 5
 
 [params]
   #  LoveIt theme version
@@ -206,9 +198,6 @@ theme = "LoveIt"
   [params.social]
     GitHub = "aleksvagapitov"
     Linkedin = "aleksvagapitov"
-    Twitter = "aleksvagapitov"
-    Instagram = "aleksvagapitov"
-    Reddit = "aleksvagapitov"
     Stackoverflow = "12269613"
     Goodreads = "aleksvagapitov"
     Hackernews = ""
@@ -280,9 +269,9 @@ theme = "LoveIt"
     [params.page.share]
       enable = true
       Twitter = true
-      Facebook = true
-      Linkedin = false
-      Whatsapp = true
+      Facebook = false
+      Linkedin = true
+      Whatsapp = false
       Pinterest = false
       Tumblr = false
       HackerNews = false
@@ -290,19 +279,19 @@ theme = "LoveIt"
       VK = false
       Buffer = false
       Xing = false
-      Line = true
+      Line = false
       Instapaper = false
       Pocket = false
       Digg = false
       Stumbleupon = false
       Flipboard = false
-      Weibo = true
+      Weibo = false
       Renren = false
-      Myspace = true
-      Blogger = true
+      Myspace = false
+      Blogger = false
       Baidu = false
       Odnoklassniki = false
-      Evernote = true
+      Evernote = false
       Skype = false
       Trello = false
       Mix = false
@@ -608,14 +597,6 @@ theme = "LoveIt"
         title = ""
       [[languages.en.menu.main]]
         weight = 5
-        identifier = "portfolio"
-        pre = ""
-        post = ""
-        name = "Portfolio"
-        url = "/portfolio/"
-        title = ""
-      [[languages.en.menu.main]]
-        weight = 6
         identifier = "github"
         pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
         post = ""
@@ -636,9 +617,6 @@ theme = "LoveIt"
           disclaimer = ""
       [languages.en.params.social]
         GitHub = "aleksvagapitov"
-        Twitter = "aleksvagapitov"
-        Instagram = "aleksvagapitov"
-        Phone = "305-319-9220"
         Email = "aleksvagapitov@gmail.com"
         RSS = true
 
@@ -682,14 +660,6 @@ theme = "LoveIt"
         title = ""
       [[languages.jp.menu.main]]
         weight = 5
-        identifier = "portfolio"
-        pre = ""
-        post = ""
-        name = "ポートフォリオ"
-        url = "/portfolio/"
-        title = ""
-      [[languages.jp.menu.main]]
-        weight = 6
         identifier = "github"
         pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
         post = ""
@@ -710,8 +680,5 @@ theme = "LoveIt"
           disclaimer = ""
       [languages.jp.params.social]
         GitHub = "aleksvagapitov"
-        Twitter = "aleksvagapitov"
-        Instagram = "aleksvagapitov"
-        Phone = "070-1291-8405"
         Email = "aleksvagapitov@gmail.com"
         RSS = true
