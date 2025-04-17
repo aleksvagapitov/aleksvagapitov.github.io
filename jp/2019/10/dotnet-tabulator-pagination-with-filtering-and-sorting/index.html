@@ -15,10 +15,10 @@ ASP.NET Coreと
 EntityFrameworkコアとページネーション
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" /><meta property="og:image" content="https://aleksvagapitov.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" />
+<meta property="og:image" content="https://aleksvagapitov.github.io/logo.png"/>
 <meta property="article:published_time" content="2019-10-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-10-09T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://aleksvagapitov.github.io/logo.png"/>
 
@@ -68,7 +68,7 @@ EntityFrameworkコアとページネーション
             <a href="/jp/" title="Aleksandr Agapitov">Aleksandr Agapitov</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/jp/posts/"> 投稿 </a><a class="menu-item" href="/jp/tags/"> タグ </a><a class="menu-item" href="/jp/categories/"> 種類 </a><a class="menu-item" href="/jp/about/"> について </a><a class="menu-item" href="/jp/portfolio/"> ポートフォリオ </a><a class="menu-item" href="https://github.com/aleksvagapitov" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="言語を選択する">日本語<i class="fas fa-chevron-right fa-fw"></i>
+            <div class="menu-inner"><a class="menu-item" href="/jp/posts/"> 投稿 </a><a class="menu-item" href="/jp/tags/"> タグ </a><a class="menu-item" href="/jp/categories/"> 種類 </a><a class="menu-item" href="/jp/about/"> について </a><a class="menu-item" href="https://github.com/aleksvagapitov" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="言語を選択する">日本語<i class="fas fa-chevron-right fa-fw"></i>
                         <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/">English</option><option value="/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" selected>日本語</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="タイトルや内容を検索する..." id="search-input-desktop">
@@ -113,7 +113,7 @@ EntityFrameworkコアとページネーション
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         キャンセル
                     </a>
-                </div><a class="menu-item" href="/jp/posts/" title="">投稿</a><a class="menu-item" href="/jp/tags/" title="">タグ</a><a class="menu-item" href="/jp/categories/" title="">種類</a><a class="menu-item" href="/jp/about/" title="">について</a><a class="menu-item" href="/jp/portfolio/" title="">ポートフォリオ</a><a class="menu-item" href="https://github.com/aleksvagapitov" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="テーマの切り替え">
+                </div><a class="menu-item" href="/jp/posts/" title="">投稿</a><a class="menu-item" href="/jp/tags/" title="">タグ</a><a class="menu-item" href="/jp/categories/" title="">種類</a><a class="menu-item" href="/jp/about/" title="">について</a><a class="menu-item" href="https://github.com/aleksvagapitov" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="テーマの切り替え">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="言語を選択する">日本語<i class="fas fa-chevron-right fa-fw"></i>
                     <select class="language-select" onchange="location = this.value;"><option value="/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/">English</option><option value="/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" selected>日本語</option></select>
@@ -160,7 +160,7 @@ EntityFrameworkコアとページネーション
 <!--more-->
 <h2 id="この例のモデル">この例のモデル</h2>
 <p>この例では、以下のモデルを持つデータベース・スキーマを使用します：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">Contact</span>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">Contact</span>
 <span class="p">{</span>
 <span class="na">    [Key]</span>
     <span class="k">public</span> <span class="kt">int</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
@@ -171,10 +171,11 @@ EntityFrameworkコアとページネーション
     <span class="k">public</span> <span class="kt">string</span> <span class="n">Email</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">public</span> <span class="kt">int</span> <span class="n">ZipCode</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">public</span> <span class="kt">string</span> <span class="n">About</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="データベースコンテキストの構造">データベースコンテキストの構造</h2>
 <p>この例では、Startup.csファイルで依存性注入を使用したインメモリ・ストレージを使用します：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">TabulatorContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">TabulatorContext</span> <span class="p">:</span> <span class="n">DbContext</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="n">DbSet</span><span class="p">&lt;</span><span class="n">Contact</span><span class="p">&gt;</span> <span class="n">Contacts</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 
@@ -183,29 +184,33 @@ EntityFrameworkコアとページネーション
         <span class="p">:</span> <span class="k">base</span> <span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">void</span> <span class="n">EnsureSeedData</span> <span class="p">(){}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="リポジトリの構造">リポジトリの構造</h2>
 <p>リポジトリを見る前にインストールする必要がある重要なパッケージの1つは、<a href="https://www.nuget.org/packages/EntityFrameworkPaginateCore" target="_blank" rel="noopener noreffer">EntityFrameworkPaginateCore</a>です。これは、バックエンド側でフィルタリングとソートを行うために必要です。Dotnet CLIを使って、以下のコマンドでインストールできます：</p>
 <p>| dotnet add package EntityFrameworkPaginateCore &ndash;version 1.1.0</p>
 <p><em>Github上のサンプル・プロジェクトには必要なパッケージがすべて含まれており、プロジェクトのREADMEの指示に従うだけです。</em></p>
 <p>リポジトリ構造は、以下のメソッドシグネチャに依存しています：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Task</span><span class="p">&lt;</span><span class="n">TabulatorViewModel</span><span class="p">&gt;</span> <span class="n">GetFilteredData</span> <span class="p">(</span><span class="kt">int</span> <span class="n">page</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span>
-  <span class="n">List</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;&gt;</span> <span class="n">filters</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;&gt;</span> <span class="n">sorters</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Task</span><span class="p">&lt;</span><span class="n">TabulatorViewModel</span><span class="p">&gt;</span> <span class="n">GetFilteredData</span> <span class="p">(</span><span class="kt">int</span> <span class="n">page</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span>
+  <span class="n">List</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;&gt;</span> <span class="n">filters</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;&gt;</span> <span class="n">sorters</span><span class="p">)</span>
+</code></pre></div>
 <p>ここで重要なのは、「フィルター」と「ソーター」のパラメーターの種類である：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">List</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;&gt;</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">List</span><span class="p">&lt;</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;&gt;</span>
+</code></pre></div>
 <p>というのも、以下のような形式でフィルターを取得することになるからだ：
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">[{</span><span class="err">field:</span><span class="nt">&#34;age&#34;</span><span class="p">,</span> <span class="err">type:</span><span class="nt">&#34;&gt;&#34;</span><span class="p">,</span> <span class="err">value:52</span><span class="p">},</span> <span class="p">{</span><span class="err">field:</span><span class="nt">&#34;height&#34;</span><span class="p">,</span> <span class="err">type:</span><span class="nt">&#34;&lt;&#34;</span><span class="p">,</span> <span class="err">value:142</span><span class="p">}]</span></code></pre></div></p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[{</span><span class="err">field:</span><span class="nt">&#34;age&#34;</span><span class="p">,</span> <span class="err">type:</span><span class="nt">&#34;&gt;&#34;</span><span class="p">,</span> <span class="err">value:52</span><span class="p">},</span> <span class="p">{</span><span class="err">field:</span><span class="nt">&#34;height&#34;</span><span class="p">,</span> <span class="err">type:</span><span class="nt">&#34;&lt;&#34;</span><span class="p">,</span> <span class="err">value:142</span><span class="p">}]</span></code></pre></div></p>
 <p>とソーター用：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">[{</span><span class="err">field:</span> <span class="nt">&#34;age&#34;</span><span class="p">,</span> <span class="err">dir:</span> <span class="nt">&#34;asc&#34;</span><span class="p">}]</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[{</span><span class="err">field:</span> <span class="nt">&#34;age&#34;</span><span class="p">,</span> <span class="err">dir:</span> <span class="nt">&#34;asc&#34;</span><span class="p">}]</span></code></pre></div>
 <p>さらに重要なのは、Tabulatorにデータを戻すために使用するViewModelです：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">TabulatorViewModel</span>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">TabulatorViewModel</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">dynamic</span><span class="p">&gt;</span> <span class="n">Data</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">public</span> <span class="kt">int</span> <span class="n">Last_page</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+</code></pre></div>
 <p>メソッドの全容は<a href="https://github.com/aleksvagapitov/DotnetTabulatorFiltering/blob/master/Models/TabulatorRespository.cs" target="_blank" rel="noopener noreffer">こちら</a>で説明されており、ほとんどの場合、辞書項目のリストを反復処理し、ブログの冒頭で言及したモデルで説明した各カラムのフィールドと値を設定することで構成されている。</p>
 <h2 id="フロントエンドタブレーターコード">フロントエンド・タブレーター・コード</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">table</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Tabulator</span><span class="p">(</span><span class="s">&#34;#example-table&#34;</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">table</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Tabulator</span><span class="p">(</span><span class="s">&#34;#example-table&#34;</span><span class="p">,</span> <span class="p">{</span>
     <span class="n">pagination</span><span class="p">:</span> <span class="s">&#34;remote&#34;</span><span class="p">,</span>
     <span class="n">ajaxURL</span><span class="p">:</span> <span class="n">baseUrl</span> <span class="p">+</span> <span class="n">apiEndpoint</span><span class="p">,</span>
     <span class="n">paginationSize</span><span class="p">:</span> <span class="m">10</span><span class="p">,</span>
@@ -221,7 +226,8 @@ EntityFrameworkコアとページネーション
         <span class="p">{</span> <span class="n">title</span><span class="p">:</span> <span class="s">&#34;ZipCode&#34;</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="s">&#34;zipCode&#34;</span><span class="p">,</span> <span class="n">sorter</span><span class="p">:</span> <span class="s">&#34;number&#34;</span><span class="p">,</span> <span class="n">headerFilter</span><span class="p">:</span> <span class="s">&#34;input&#34;</span> <span class="p">},</span>
         <span class="p">{</span> <span class="n">title</span><span class="p">:</span> <span class="s">&#34;About&#34;</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="s">&#34;about&#34;</span><span class="p">,</span> <span class="n">sorter</span><span class="p">:</span> <span class="s">&#34;string&#34;</span><span class="p">,</span> <span class="n">headerFilter</span><span class="p">:</span> <span class="s">&#34;input&#34;</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="m">500</span> <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span>
+</code></pre></div>
 <p>上記の構造により、Ajaxを使ってデータにフィルタをかけたり、ページ分割したりすることができる。この構造でとても便利なのは、バックエンドを調整することなくフロントエンドからカラムを削除できることだ。<strong>しかし</strong>、フロントエンドに渡すオブジェクトには注意し、APIが何を返すか確認してください。データが漏れないようにする方法は、ViewModelsと<a href="https://automapper.org" target="_blank" rel="noopener noreffer">AutoMapper</a>を使うか、通常のオブジェクト合成を使って、関連するデータだけをフロントエンドに渡すことです。このブログでは、あまり多くの概念を紹介しないように、Repositoryメソッドの実装の中で、AutoMapper節が入る箇所をコメントアウトしておきました。最後に、<a href="https://www.getpostman.com" target="_blank" rel="noopener noreffer">Postman</a>のようなツールを使ってAPIを照会し、それが返すデータを見ることができる。</p>
 <p>繰り返しますが、すべてのコードは<a href="https://github.com/aleksvagapitov/DotnetTabulatorFiltering" target="_blank" rel="noopener noreffer">こちら</a>に、Tabulatorに関する完全なドキュメントは<a href="http://tabulator.info" target="_blank" rel="noopener noreffer">こちら</a>にあります。</p>
 <p>お楽しみください。バグや問題があれば、遠慮なく報告ください： <a href="https://github.com/aleksvagapitov/DotnetTabulatorFiltering/issues" target="_blank" rel="noopener noreffer">GitHub issues</a> :)</p></div><div class="post-footer" id="post-footer">
@@ -237,13 +243,7 @@ EntityFrameworkコアとページネーション
                             <a class="link-to-markdown" href="/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/index.md" target="_blank">マークダウンを読む</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="共有する Twitter" data-sharer="twitter" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-title="ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core" data-via="aleksvagapitov" data-hashtags="ASP.NET,EntityFramework,Javascript"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="共有する Facebook" data-sharer="facebook" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-hashtag="ASP.NET"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="共有する WhatsApp" data-sharer="whatsapp" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-title="ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="共有する Line" data-sharer="line" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-title="ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core"><i class="fab fa-line fa-fw"></i></a><a href="javascript:void(0);" title="共有する 微博" data-sharer="weibo" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-title="ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="共有する Myspace" data-sharer="myspace" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-title="ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core" data-description="動的テーブルの実装 
-ASP.NET Coreと
-EntityFrameworkコアとページネーション
-"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="共有する Blogger" data-sharer="blogger" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-title="ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core" data-description="動的テーブルの実装 
-ASP.NET Coreと
-EntityFrameworkコアとページネーション
-"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="共有する Evernote" data-sharer="evernote" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-title="ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="共有する Twitter" data-sharer="twitter" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/" data-title="ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core" data-hashtags="ASP.NET,EntityFramework,Javascript"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="共有する Linkedin" data-sharer="linkedin" data-url="https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/"><i class="fab fa-linkedin fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -261,8 +261,8 @@ EntityFrameworkコアとページネーション
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">提供者: <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> | テーマ - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.6"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/jp/" target="_blank">Aleksandr</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">提供者: <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> | テーマ - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.6"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/jp/" target="_blank">Aleksandr</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

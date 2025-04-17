@@ -1,13 +1,9 @@
 # About Me
 
 
-I'm Aleksandr Agapitov, a software engineer and an aspiring artist.
+Hello, my name is Aleksandr. I’m a software engineer who enjoys creating thoughtful, user-centered solutions to real-world problems.
 
-As a software engineer, I write mostly in C# using .NET and React.js; In addition, I own/manage a few Linux servers and utilize Docker for deployments. I have also written projects using Python, Go, and Vue.js
+I primarily specialize in backend development with .NET and frontend with React or React Native. On the infrastructure side, I’ve built projects using Terraform, Ansible, and Kubernetes—all of which you can check out on my GitHub. Beyond that, I’ve worked with Python, Go, and Vue.js, and enjoy exploring different tech stacks.
 
-<object data="/resume/Resume.pdf" type="application/pdf" width="700px" height="900px">
-    <embed src="/resume/Resume.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/resume/Resume.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+Always happy to connect with other professionals, collaborators, or anyone working on interesting things.
 

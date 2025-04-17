@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Aleksandr Agapitov</title>
-        <link>https://aleksvagapitov.github.io/jp/</link>
-        <description>This is My New Hugo Site</description>
+        <title>チュートリアル - 種類 - Aleksandr Agapitov</title>
+        <link>https://aleksvagapitov.github.io/jp/categories/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/</link>
+        <description>チュートリアル - 種類 - Aleksandr Agapitov</description>
         <generator>Hugo -- gohugo.io</generator><language>jp</language><managingEditor>aleksvagapitov@gmail.com (Aleksandr)</managingEditor>
-            <webMaster>aleksvagapitov@gmail.com (Aleksandr)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate><atom:link href="https://aleksvagapitov.github.io/jp/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>aleksvagapitov@gmail.com (Aleksandr)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 09 Oct 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://aleksvagapitov.github.io/jp/categories/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/" rel="self" type="application/rss+xml" /><item>
     <title>ページネーション、フィルタリング、ソートを備えた動的テーブルを作成するためのタブレータを備えたASP.NET Core</title>
     <link>https://aleksvagapitov.github.io/jp/2019/10/dotnet-tabulator-pagination-with-filtering-and-sorting/</link>
     <pubDate>Wed, 09 Oct 2019 00:00:00 &#43;0000</pubDate>

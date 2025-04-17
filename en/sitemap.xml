@@ -2,24 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://aleksvagapitov.github.io/portfolio/</loc><lastmod>2020-05-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="jp"
-                        href="https://aleksvagapitov.github.io/jp/portfolio/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://aleksvagapitov.github.io/portfolio/"
-                    /></url><url>
-            <loc>https://aleksvagapitov.github.io/</loc><lastmod>2019-10-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="jp"
-                        href="https://aleksvagapitov.github.io/jp/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://aleksvagapitov.github.io/"
-                    /></url><url>
             <loc>https://aleksvagapitov.github.io/tags/asp.net/</loc><lastmod>2019-10-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="jp"
@@ -92,4 +74,13 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://aleksvagapitov.github.io/about/"
+                    /></url><url>
+            <loc>https://aleksvagapitov.github.io/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="jp"
+                        href="https://aleksvagapitov.github.io/jp/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://aleksvagapitov.github.io/"
                     /></url></urlset>
